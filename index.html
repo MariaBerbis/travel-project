@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hobby Proyect</title>
+    <style>
+        body {
+            background: linear-gradient(89.2deg,
+                    rgb(191, 241, 236) 22.3%,
+                    rgb(109, 192, 236) 84.1%);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1 {
+            color: #6096b4;
+            font-size: 40px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #6096b4;
+            text-align: center;
+        }
+
+        img {
+            border-radius: 8px;
+            max-width: 100%;
+            transition: all 150ms ease-in-out;
+        }
+
+        .intro-picture {
+            border-radius: 8px;
+        }
+
+        .intro-picture:hover {
+            filter: contrast(60%);
+            transform: scale(1.05);
+        }
+
+        p {
+            color: #6096b4;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        button {
+            background: #eee9da;
+            border: 1px solid #6096b4;
+            border-radius: 8px;
+            display: block;
+            font-size: 12px;
+            margin: 0 auto;
+            padding: 10px 15px;
+            transition: all 200ms ease-in-out;
+        }
+
+        button:hover {
+            background: #93bfcf;
+            cursor: pointer;
+        }
+
+        footer {
+            font-size: 12px;
+            margin: 25px 0;
+            text-align: center;
+        }
+
+        .theme-button {
+            background: black;
+            color: #eee9da;
+            font-size: 10px;
+            padding: 5 8px;
+        }
+
+        .theme-button:hover {
+            background: #eee9da;
+            color: black;
+        }
+
+        .content {
+            background: #eee9da;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 600px;
+            padding: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-gap: 15px;
+            grid-template-columns: 1fr 1fr;
+            padding-top: 20px;
+        }
+
+        .grid img {
+            aspect-ratio: 2/1.2;
+            width: 100%;
+        }
+
+        .grid img:hover {
+            transform: scale(1.05);
+        }
+
+        .dark {
+            background: radial-gradient(circle at 10% 20%,
+                    rgb(0, 0, 0) 0%,
+                    rgb(64, 64, 64) 90.2%);
+            color: #025c8d;
+        }
+
+        .dark a {
+            color: #6096b4;
+        }
+
+        .dark .content {
+            background: rgb(70, 70, 70);
+        }
+    </style>
+</head>
+
+<body>
+    <button class="theme-button">Dark Theme</button>
+    <div class="content">
+        <h1>Travel ✈️</h1>
+        <h2>My favourite hobby in the world</h2>
+        <a href="https://en.wikipedia.org/wiki/Travel" target="_blank">
+            <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/103/397/original/Traveling2.jpg?1699525842"
+                alt="Monuments in the world's surface" class="intro-picture" /></a>
+        <div class="grid">
+            <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/103/399/original/Traveling5.jpg?1699526109"
+                alt="Lake between mountains" />
+            <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/103/395/original/Traveling1.jpg?1699525823"
+                alt="Hammock by the beach" />
+            <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/103/418/original/sasha-stories-R69KAiXc9c0-unsplash.jpg?1699535348"
+                alt="Flying over San Francisco" />
+            <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/103/400/original/traveling4.jpg?1699526945"
+                alt="Sailing boat" />
+        </div>
+        <p>
+            What is to travel? Travel is the movement of people between distant
+            geographical locations. Travel can be done by foot, bicycle, automobile,
+            train, boat, bus, airplane, ship or other means, with or without
+            luggage, and can be one way or round trip.Travel can also include
+            relatively short stays between successive movements, as in the case of
+            tourism.
+        </p>
+        <button class="plan-trip-button">Choose your destination</button>
+    </div>
+    <footer>
+        Coded by
+        <a href="https://www.linkedin.com/in/maria-berbis-martin/" target="_blank">María Berbis</a>
+    </footer>
+    <script>
+        function questions() {
+            let name = prompt("What is your name?");
+            let destination = prompt("Where would you like to go?");
+
+            alert(
+                "Thanks " + name + "! Wish you a safe travels to " + destination + "!"
+            );
+        }
+        function changeTheme() {
+            let body = document.querySelector("body");
+
+            if (body.classList.contains("dark")) {
+                body.classList.remove("dark");
+            } else {
+                body.classList.add("dark");
+            }
+        }
+
+        let planTripButton = document.querySelector(".plan-trip-button");
+        planTripButton.addEventListener("click", questions);
+
+        let themeButton = document.querySelector(".theme-button");
+        themeButton.addEventListener("click", changeTheme);
+    </script>
+</body>
+
+</html>
